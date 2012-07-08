@@ -1,4 +1,4 @@
-/*! safeQuery */
+/*! https://github.com/ReallyGood/safeQuery */
 (function($, w){
 if(!w.jQuery || !w.console) return;
 if(!console.warn) console.warn = console.log;
