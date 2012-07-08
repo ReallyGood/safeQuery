@@ -1,5 +1,6 @@
 (function($){
-if(typeof $ == 'undefined') return;
+if(typeof $ == 'undefined' || typeof console == 'undefined') return;
+if(!console.warn) console.warn = console.log;
 
 var _$ = $,
 	props = {},
@@ -11,14 +12,12 @@ for(i in $) {
 
 window.$ = function(){
 	var result = _$.apply(this,arguments);
-	!result.length && console && console.warn && console.warn('jQuery Selector "' + result.selector + '" returned no matches');
+	if(!result.length) console.warn('jQuery Selector "' + result.selector + '" returned no matches');
 	return result;
 };
 
 for(j in props) {
 	if(props.hasOwnProperty(j)) window.$[j] = props[j];
 }
-
-window.jQuery = $;
 
 })(jQuery);
