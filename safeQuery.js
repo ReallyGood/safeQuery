@@ -1,22 +1,23 @@
 (function($){
-if(typeof $ === 'undefined') return;
+if(typeof $ == 'undefined') return;
 
 var _$ = $,
-	props = {};
+	props = {},
+	i, j;
 
-$.each($, function(i, prop){
-	props[i] = prop;
-});
+for(i in $) {
+	if($.hasOwnProperty(i)) props[i] = $[i];
+}
 
 window.$ = function(){
-	var selection = _$.apply(this,arguments);
-	selection.length==0 && console && console.warn && console.warn(selection.selector+':jQuery selector returned no matches');
-	return selection;
+	var result = _$.apply(this,arguments);
+	!result.length && console && console.warn && console.warn('jQuery Selector "' + result.selector + '" returned no matches');
+	return result;
 };
 
-$.each(props, function(i, prop){
-	window.$[i] = props[i];
-});
+for(j in props) {
+	if(props.hasOwnProperty(j)) window.$[j] = props[j];
+}
 
 window.jQuery = $;
 
