@@ -12,4 +12,4 @@ Check out the [__DEMO__](http://reallygood.co.il/plugins/safeQuery/) page, and t
 * Licensed under MIT.
 * Thanks @[Jake](https://github.com/JakeCigar) for [nudging me](https://forum.jquery.com/topic/warn-when-no-elements-are-returned#14737000003478244) in the right direction.
 * You should read Paul Irish's awesome post ["How to fulfill your own feature request -or- Duck Punching with jQuery!"](http://paulirish.com/2010/duck-punching-with-jquery/).
-* If complex chained selectors are your thing, be sure to check out [jQuery.inlog](https://github.com/Prinzhorn/jquery-inlog), which provides a deeper look inside the beast.
+* If complex chained selectors are your thing, be sure to check out [jQuery-inlog](https://github.com/Prinzhorn/jquery-inlog), which provides a deeper look inside the beast.
