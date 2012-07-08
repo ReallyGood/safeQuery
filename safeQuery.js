@@ -1,7 +1,7 @@
-/*! https://github.com/ReallyGood/safeQuery */
-(function($, w){
-if(!w.jQuery || !w.console) return;
-if(!console.warn) console.warn = console.log;
+/* https://github.com/ReallyGood/safeQuery */
+(function($, w, c){
+if(!w.jQuery || !console) return;
+c.w = c.warn || c.log; // safely use either warn or log
 // jQuery and console.warn/log are available, we're good to go
 
 var _$ = $,
@@ -16,7 +16,7 @@ for(i in $) {
 // 'duck punch' jQuery - Replace with a wrapper function with our warning which returns the original result
 w.$ = function(){
 	var result = _$.apply(this, arguments);
-	if(!result.length) console.warn('jQuery Selector "' + result.selector + '" returned no matches');
+	if(!result.length) c.w('jQuery Selector "' + result.selector + '" returned no matches');
 	return result;
 };
 
@@ -26,4 +26,4 @@ for(j in props) {
 }
 w.jQuery = w.$;
 
-}(jQuery, window));
+}(jQuery, window, console));
