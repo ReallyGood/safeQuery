@@ -1,6 +1,6 @@
 /* https://github.com/ReallyGood/safeQuery */
 (function($, w, c){
-if(!w.jQuery || !console) return;
+if(!w.jQuery || !c) return;
 c.w = c.warn || c.log; // safely use either warn or log
 // jQuery and console.warn/log are available, we're good to go
 
