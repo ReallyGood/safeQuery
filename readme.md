@@ -1,12 +1,13 @@
 # safeQuery
 Silent failures such as bad selectors are annoying time-wasters.
-**safeQuery** warns you when jQuery calls return zero results.
+**safeQuery** warns you when jQuery calls return zero results, and when `attr` calls return undefined.
 
 Tested with jQuery 1.7.2 and should work on all browsers.
 It's less than 400 bytes, just inline [safeQuery.min.js](https://raw.github.com/ReallyGood/safeQuery/master/safeQuery.min.js) after loading jQuery.
 
 ## Demo
 Check out the [__DEMO__](http://reallygood.co.il/plugins/safeQuery/) page, and type the following in your console: `$('.oops')`
+You can also try `$('body').attr('madeup');`
 
 ### Footnotes
 * Licensed under MIT.
